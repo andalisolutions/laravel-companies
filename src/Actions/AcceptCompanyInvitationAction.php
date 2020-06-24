@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Andali\Companies\Actions;
 
-
 use Andali\Companies\Exceptions\CompanyInvitationException;
 use Andali\Companies\Models\CompanyInvitation;
 use Illuminate\Support\Facades\Auth;
