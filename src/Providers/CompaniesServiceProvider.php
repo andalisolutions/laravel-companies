@@ -11,7 +11,6 @@ class CompaniesServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/companies.php', 'companies');
-        $this->registerMigrations();
     }
 
     public function boot(): void
@@ -21,23 +20,12 @@ class CompaniesServiceProvider extends ServiceProvider
 
             $this->publishes([
                 __DIR__.'/../../config/companies.php' => $this->app->configPath('companies.php'),
-            ], 'config');
+            ], 'companies-config');
 
             $this->publishes([
                 __DIR__.'/../../database/migrations/' => $this->app->databasePath('/migrations'),
-            ], 'migrations');
+            ], 'companies-migrations');
         }
     }
 
-    /**
-     * Register the package migrations.
-     *
-     * @return void
-     */
-    protected function registerMigrations()
-    {
-        if ($this->app->runningInConsole()) {
-            $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        }
-    }
 }
