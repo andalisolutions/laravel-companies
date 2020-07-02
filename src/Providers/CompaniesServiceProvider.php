@@ -27,5 +27,4 @@ class CompaniesServiceProvider extends ServiceProvider
             ], 'companies-migrations');
         }
     }
-
 }
