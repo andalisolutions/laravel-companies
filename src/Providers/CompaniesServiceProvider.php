@@ -25,6 +25,8 @@ class CompaniesServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../../database/migrations/' => $this->app->databasePath('/migrations'),
             ], 'companies-migrations');
+
+            $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         }
     }
 
