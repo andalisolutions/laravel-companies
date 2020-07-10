@@ -29,5 +29,4 @@ class CompaniesServiceProvider extends ServiceProvider
             $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         }
     }
-
 }
